@@ -24,8 +24,6 @@ function calculateResult() {
             result = parseInt(part);
         } else {
             nextNumber = parseInt(part);
-            console.log({result, nextOperator, nextNumber})
-
             switch (nextOperator) {
                 case '*':
                     result *= nextNumber;
@@ -35,7 +33,6 @@ function calculateResult() {
                         result = 'Division by zero is not allowed';
                         break mainLoop;
                     }
-
                     result /= nextNumber;
                     break;
                 case '+':
