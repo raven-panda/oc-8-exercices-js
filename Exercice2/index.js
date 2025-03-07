@@ -1,11 +1,23 @@
 // Créez votre fonction ici
 
-// Exemples d'utilisation de la fonction
-console.log(calculate(5, 3, '+'));   // Affiche 8
-console.log(calculate(10, 4, '-'));  // Affiche 6
-console.log(calculate(7, 2, '*'));   // Affiche 14
-console.log(calculate(12, 3, '/'));  // Affiche 4
-console.log(calculate(8, 0, '/'));   // Affiche "Division by zero is not allowed"
-console.log(calculate(4, 5, '%'));   // Affiche "Invalid operator"
+function calculate(operand1, operand2, operator) {
+    const parsedOperand1 = typeof operand1 === 'string' ? parseInt(operand1) : operand1,
+        parsedOperand2 = typeof operand2 === 'string' ? parseInt(operand2) : operand2;
+
+    switch (operator) {
+        case '+':
+            return parsedOperand1 + parsedOperand2;
+        case '-':
+            return parsedOperand1 - parsedOperand2;
+        case '*':
+            return parsedOperand1 * parsedOperand2;
+        case '/':
+            return parsedOperand2 === 0 ?
+                'Division by zero is not allowed'
+                : parsedOperand1 / parsedOperand2;
+        default:
+            return 'Invalid operator';
+    }
+}
 
 export default calculate
